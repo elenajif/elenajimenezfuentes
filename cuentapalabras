@@ -1,0 +1,31 @@
+/**
+ *	Este programa pretende contar el numero de palabras que hay en una cadena
+ *	las palabras estan separadas por un espacio en blanco
+ *,
+ **/
+ public class CcuentaPalabras {
+ 	
+ 	
+ 	public static void main (String args[]){
+ 		String cad = new String("");
+ 		char blanco = ' ';
+ 		int cuantos = 0;
+ 		System.out.print("deme la cadena ");
+ 		cad = CTeclado.ReadString();
+ 		cuantos = contar(cad);
+ 		System.out.println("Habia "+cuantos+ "palabras");
+ 		
+ 	}
+ 	
+	public static int contar(String st){
+		char a;
+		int n = 1; // para contar la primera palabra
+		int i = st.indexOf(" ");//para encontrar la posicion del primer blanco
+		while (i>0) { // mientras haya espacios en blanco
+			n++; // sumo 1 al contador
+			st = st.substring(i+1);// recorto la cadena para quitar una palabra
+			i = st.indexOf(" "); // encuentro el siguiente blanco
+		}
+		return n++; // para contar la ultima palabra
+ 	}
+ }
